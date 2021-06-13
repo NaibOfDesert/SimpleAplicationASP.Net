@@ -8,29 +8,22 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SimpleAplicationASP.Net
 {
-    [Table("Books")]
     public class Book
     {
         [Key]
-        public int bookId { get; set; }
-        public string bookTitle { get; set; } 
-        public string bookAuthor { get; set; }
-        public int bookDateRelease { get; set; }
-        public BookCoverType bookCover { get; set; }
+        public int Id { get; set; }
+        public Author Author { get; set; }
+        public string Title { get; set; }
+        public int Year { get; set; }
+        public Publisher Publisher { get; set; }
 
         public Book() { }
-
-        public Book (int __bookId, string __bookTitle, string __bookAuthor, int __bookDateRelease, BookCoverType __bookCover)
+        public Book(Author __author, string __title, int __year, Publisher __publisher)
         {
-            bookId = __bookId;
-            bookTitle = __bookTitle;
-            bookAuthor = __bookAuthor;
-            bookDateRelease = __bookDateRelease;
-            bookCover = __bookCover;
+            Author = __author;
+            Title = __title;
+            Year = __year;
+            Publisher = __publisher;
         }
-
-
-
-
     }
 }

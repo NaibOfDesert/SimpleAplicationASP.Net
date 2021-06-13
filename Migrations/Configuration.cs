@@ -19,6 +19,13 @@
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
+
+            context.Books.AddOrUpdate(
+            new Book(new Author("Tomasz", "Bielak"), "Jakaś książka", 2011, new Publisher("Wydawnictwo co")),
+            new Book(new Author("Ola", "Fasola"), "Coś tam było", 2001, new Publisher("Wydawnictwo kto")),
+             new Book(new Author("Jacek", "Posmak"), "Placek", 2011, new Publisher("Wtedy")),
+            new Book(new Author("Iza", "Iza"), "Test2", 2001, new Publisher("Kiedy"))
+            );
         }
     }
 }
